@@ -18,20 +18,21 @@ namespace gerenciamentoFunc
 
         public override decimal CalcularImpostos()
         {
-            Impostos = Salario * 0.10m; 
-            return Impostos;
+            return (Salario + (HorasExtras * ValorPorHorasExtras)) * 0.10m;
         }
+
 
         public override decimal CalcularSalario()
-        {
-            decimal valorHorasExtras = HorasExtras * ValorPorHorasExtras;
-            decimal impostos = CalcularImpostos();
-            decimal salarioFinal = Salario + valorHorasExtras - impostos;
+{
+    decimal valorHorasExtras = HorasExtras * ValorPorHorasExtras;
+    decimal impostos = CalcularImpostos();
+    decimal salarioFinal = Salario + valorHorasExtras - impostos;
 
-            Console.WriteLine($"Valor total das horas extras: {valorHorasExtras:C}");
+    Console.WriteLine($"Valor total das horas extras: {valorHorasExtras:C}");
 
-            return salarioFinal;
-        }
+    return salarioFinal;
+}
+
 
 
         public override string EntregarPagamento()

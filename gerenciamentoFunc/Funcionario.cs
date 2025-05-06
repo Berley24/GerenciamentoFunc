@@ -29,9 +29,13 @@
         }
 
         public abstract decimal CalcularSalario();
-        public abstract decimal CalcularImpostos();
-        
-       
+
+        // Fix for CS0106 and CS1520: Add a return type and remove the invalid "virtual" modifier
+        public virtual decimal CalcularImpostos()
+        {
+            // Placeholder implementation, replace with actual logic
+            return Salario * Impostos / 100;
+        }
 
         public virtual string EntregarPagamento()
         {

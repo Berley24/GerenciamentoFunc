@@ -17,6 +17,8 @@ namespace gerenciamentoFunc
                 Console.WriteLine("2 - Adicionar Desenvolvedor");
                 Console.WriteLine("3 - Adicionar Estagiário");
                 Console.WriteLine("4 - Mostrar todos os funcionários");
+                Console.WriteLine("5 - Buscar funcionário por nome");
+                Console.WriteLine("6 - Remover funcionário");
                 Console.WriteLine("0 - Sair");
                 Console.Write("Escolha uma opção: ");
                 string opcao = Console.ReadLine();
@@ -35,6 +37,13 @@ namespace gerenciamentoFunc
                     case "4":
                         MostrarFuncionarios();
                         break;
+                    case "5":
+                        BuscarFuncionario();
+                        break;
+                    case "6":
+                        RemoverFuncionario();
+                        break;
+
                     case "0":
                         return;
                     default:
@@ -123,6 +132,45 @@ namespace gerenciamentoFunc
                 Console.WriteLine("--------------------------");
             }
         }
+
+        static void BuscarFuncionario()
+        {
+            Console.Write("Digite o nome do funcionário: ");
+            string nomeBusca = Console.ReadLine();
+            var encontrados = funcionarios.FindAll(f => f.Nome.ToLower().Contains(nomeBusca.ToLower()));
+
+            if (encontrados.Count > 0)
+            {
+                foreach (var f in encontrados)
+                {
+                    f.DisplayInfo();
+                    Console.WriteLine("--------------------------");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nenhum funcionário encontrado com esse nome.");
+            }
+        }
+
+
+        static void RemoverFuncionario()
+        {
+            Console.Write("Digite o nome do funcionário a remover: ");
+            string nome = Console.ReadLine();
+            var funcionario = funcionarios.Find(f => f.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
+
+            if (funcionario != null)
+            {
+                funcionarios.Remove(funcionario);
+                Console.WriteLine("Funcionário removido com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("Funcionário não encontrado.");
+            }
+        }
+
     }
 }
 
