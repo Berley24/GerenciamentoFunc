@@ -3,10 +3,18 @@ using System.Collections.Generic;
 
 namespace gerenciamentoFunc
 {
+    /// <summary>
+    /// Classe principal que executa o sistema de gerenciamento de funcionários.
+    /// Permite adicionar, buscar, exibir e remover funcionários do tipo Gerente, Desenvolvedor e Estagiário.
+    /// </summary>
     internal class Program
     {
+        // Lista global que armazena todos os funcionários cadastrados
         static List<Funcionario> funcionarios = new List<Funcionario>();
 
+        /// <summary>
+        /// Método principal que exibe o menu e gerencia as opções do sistema.
+        /// </summary>
         static void Main(string[] args)
         {
             while (true)
@@ -25,30 +33,14 @@ namespace gerenciamentoFunc
 
                 switch (opcao)
                 {
-                    case "1":
-                        AdicionarGerente();
-                        break;
-                    case "2":
-                        AdicionarDesenvolvedor();
-                        break;
-                    case "3":
-                        AdicionarEstagiario();
-                        break;
-                    case "4":
-                        MostrarFuncionarios();
-                        break;
-                    case "5":
-                        BuscarFuncionario();
-                        break;
-                    case "6":
-                        RemoverFuncionario();
-                        break;
-
-                    case "0":
-                        return;
-                    default:
-                        Console.WriteLine("Opção inválida.");
-                        break;
+                    case "1": AdicionarGerente(); break;
+                    case "2": AdicionarDesenvolvedor(); break;
+                    case "3": AdicionarEstagiario(); break;
+                    case "4": MostrarFuncionarios(); break;
+                    case "5": BuscarFuncionario(); break;
+                    case "6": RemoverFuncionario(); break;
+                    case "0": return;
+                    default: Console.WriteLine("Opção inválida."); break;
                 }
 
                 Console.WriteLine("Pressione ENTER para continuar...");
@@ -56,6 +48,9 @@ namespace gerenciamentoFunc
             }
         }
 
+        /// <summary>
+        /// Coleta os dados de entrada e adiciona um novo gerente à lista.
+        /// </summary>
         static void AdicionarGerente()
         {
             Console.Write("Nome: ");
@@ -78,6 +73,9 @@ namespace gerenciamentoFunc
             Console.WriteLine("Gerente adicionado com sucesso!");
         }
 
+        /// <summary>
+        /// Coleta os dados de entrada e adiciona um novo desenvolvedor à lista.
+        /// </summary>
         static void AdicionarDesenvolvedor()
         {
             Console.Write("Nome: ");
@@ -102,6 +100,9 @@ namespace gerenciamentoFunc
             Console.WriteLine("Desenvolvedor adicionado com sucesso!");
         }
 
+        /// <summary>
+        /// Coleta os dados de entrada e adiciona um novo estagiário à lista.
+        /// </summary>
         static void AdicionarEstagiario()
         {
             Console.Write("Nome: ");
@@ -122,6 +123,9 @@ namespace gerenciamentoFunc
             Console.WriteLine("Estagiário adicionado com sucesso!");
         }
 
+        /// <summary>
+        /// Exibe todos os funcionários cadastrados.
+        /// </summary>
         static void MostrarFuncionarios()
         {
             Console.Clear();
@@ -133,6 +137,9 @@ namespace gerenciamentoFunc
             }
         }
 
+        /// <summary>
+        /// Busca um funcionário pelo nome (ou parte do nome).
+        /// </summary>
         static void BuscarFuncionario()
         {
             Console.Write("Digite o nome do funcionário: ");
@@ -153,7 +160,9 @@ namespace gerenciamentoFunc
             }
         }
 
-
+        /// <summary>
+        /// Remove um funcionário com base no nome informado.
+        /// </summary>
         static void RemoverFuncionario()
         {
             Console.Write("Digite o nome do funcionário a remover: ");
@@ -170,7 +179,6 @@ namespace gerenciamentoFunc
                 Console.WriteLine("Funcionário não encontrado.");
             }
         }
-
     }
 }
 

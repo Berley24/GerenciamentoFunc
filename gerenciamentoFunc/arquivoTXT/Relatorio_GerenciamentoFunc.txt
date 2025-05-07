@@ -1,0 +1,34 @@
+
+RELATÓRIO DO SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS
+
+1. OBJETIVO DO SISTEMA
+O sistema foi desenvolvido com o propósito inicial de corrigir erros nos cálculos de salários e impostos dos funcionários, que não estavam retornando os valores corretos em versões anteriores. O projeto foi pensado para resolver essa questão central, garantindo precisão nas operações realizadas com os dados dos funcionários.
+
+2. CONTEXTO DE DESENVOLVIMENTO
+Este projeto foi desenvolvido como parte de uma atividade acadêmica, sem aplicação imediata em um ambiente corporativo real. Ele tem como foco o aprendizado de conceitos fundamentais de orientação a objetos em C#, como herança, polimorfismo, abstração e encapsulamento.
+
+3. DECISÕES DE DESIGN
+A estrutura do sistema foi baseada na simplicidade para facilitar a implementação e a compreensão dos conceitos. Por isso, optou-se por trabalhar com três tipos principais de funcionários: Gerente, Desenvolvedor e Estagiário.
+
+4. USO DE HERANÇA E POLIMORFISMO
+A arquitetura do sistema foi construída com base na orientação a objetos. A existência de uma classe abstrata chamada Funcionario atende à exigência do professor, permitindo o uso de herança e a sobrescrita de métodos como CalcularSalario(), CalcularImpostos() e DisplayInfo().
+
+5. ARMAZENAMENTO DE DADOS
+Atualmente, o sistema armazena todos os dados apenas em memória (RAM), utilizando listas. No entanto, há a intenção futura de incorporar uma camada de persistência com uso de banco de dados (ex: SQL Server ou SQLite) ou arquivos locais (ex: CSV ou JSON) para salvar os dados de forma permanente.
+
+6. INTERFACE COM O USUÁRIO
+O sistema utiliza a interface de console (CLI) como forma de entrada e saída de dados, o que é ideal para projetos educacionais e testes rápidos. Entretanto, há planos de evolução para uma interface gráfica (Windows Forms ou WPF) ou até mesmo para uma aplicação web.
+
+7. LÓGICA DE CÁLCULO DE SALÁRIOS E IMPOSTOS
+As regras de cálculo de impostos e salários foram criadas com o objetivo de simular um sistema real, embora não sigam fielmente a legislação brasileira. O gerente, por exemplo, tem uma alíquota de 27,5%, o desenvolvedor 10%, e o estagiário é isento — valores definidos apenas para fins de demonstração.
+
+8. PLANOS DE EXPANSÃO
+Existe a intenção de expandir o sistema com:
+- Inclusão de novos cargos e regras personalizadas por cargo.
+- Geração de relatórios detalhados com estatísticas e gráficos.
+- Exportação de dados para PDF, Excel ou outros formatos.
+- Emissão de comprovantes de pagamento.
+- Implementação de login, controle de permissões e histórico de alterações.
+
+CONCLUSÃO
+O projeto cumpre seu papel como ferramenta didática para explorar conceitos fundamentais da programação orientada a objetos. Ele está estruturado de forma a permitir fácil manutenção e expansão futura, podendo evoluir para um sistema completo com funcionalidades corporativas reais.
